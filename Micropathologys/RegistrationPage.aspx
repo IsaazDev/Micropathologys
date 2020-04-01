@@ -1,7 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Micropathologys.aspx.cs" Inherits="Micropathologys.Micropathologys" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistrationPage.aspx.cs" Inherits="Micropathologys.RegistrationPage" %>
 
 <!DOCTYPE html>
-
 <style>
 html {
   height: 100%;
@@ -60,57 +59,50 @@ body {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 </style>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
 </head>
-
-
+    
 <body>
-    <div class="registration-wrapper">
-        <form id="form1" runat="server">
-            <div>
-                <p>
-                    <strong>
-                        <asp:Label ID="Label1" runat="server" Text="Username"></asp:Label>
-                    </strong>
-                </p>
-                <p>
-                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                </p>
-                <p>
-                        <p>
-                            <strong>
-                        <asp:Label ID="myInput" runat="server" Text="Password"></asp:Label>
-                            </strong>
-                <p>
-                    <strong>
-                    <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
-                    </strong>
-                </p>
-                    
-               
-                <p>
-                    <asp:Button ID="Button1" runat="server" Text="Login" OnClick="Button1_Click"/>
-                </p>
+    <form id="form1" runat="server">
+        <div>
             <p>
-         
-                    <asp:Button ID="Button2" runat="server" Text="Register" OnClick="Button7_Click"/>
-         
+                <strong>Username</strong>
             </p>
-            </div>
-        </form>
-    </div>
-<script>
-    function Password() {
-        var p = document.getElementById("myInput");
-        if (p.type === "password") {
-            p.type = "text";
-        }
-        else {
-            p.type = "password";
-        }
-    }
-</script>
+            <asp:TextBox runat="server" Id ="Textbox3"  Text="TextBox1" required="required" />
+            <p>
+                <strong>Password</strong>
+            </p>
+                <asp:TextBox ID="TextBox5" runat="server" Text="TextBox5" required="required" ></asp:TextBox>
+            <p>
+            <strong>First Name</strong>
+            </p>
+            <asp:TextBox ID="FirstName" runat="server" Text="Firstname" required="required"  ></asp:TextBox>
+
+                <p>
+                <strong>Surname</strong>
+                </p>
+                <asp:TextBox ID="Surname" runat="server" Text="Surname" required="required" ></asp:TextBox>
+            <p>
+                <strong> Age </strong>
+            </p>
+            </p>
+            </p>
+            <asp:TextBox ID="Age" runat="server" Text="Age" required="required" ></asp:TextBox>
+            <p>
+                <strong> Email Address </strong>
+            </p>
+            <asp:TextBox ID="EmailAddress" runat="server" Text="EmailAddress" required="required" ></asp:TextBox>
+           
+        </div>
+        <p>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Register" />
+        </p>
+        <p>
+        <asp:Button ID="Button2" runat="server" OnClick="Button9_Click" Text="Back" />
+        </p>
+    </form>
 </body>
 </html>

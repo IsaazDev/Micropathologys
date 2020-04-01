@@ -8,9 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <strong>HEllo, welcome to my page</strong>
-        </div>
+        <asp:TextBox ID="TextBox1" runat="server" Height="230px" OnTextChanged="TextBox1_TextChanged" Width="473px"></asp:TextBox>
+        <p>
+            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged" Width="475px"></asp:TextBox>
+        </p>
     </form>
 </body>
 </html>
