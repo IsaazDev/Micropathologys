@@ -39,21 +39,8 @@ namespace Micropathologys
                 
                 if (count == "1")
                 {
-                    //Session["username"] = TextBox1.Text.Trim();
-                    //Response.Redirect("RegistrationPage.aspx");
                     MessageBox.Show("You have sign up :D"); 
                 }
-
-        
-
-                //try
-                //{
-                //    sqlcmd.ExecuteNonQuery();
-                //}
-                //catch(SqlException f)
-                //{
-                //    MessageBox.Show(f.Message.ToString(), "fill all boxes please");
-                //}
 
                 
             }

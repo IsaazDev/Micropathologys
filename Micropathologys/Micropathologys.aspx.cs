@@ -19,27 +19,22 @@ namespace Micropathologys
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated  Security=True;"))
+            using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated Security=True;"))
             {
-                 sqlCon.Open();
+                sqlCon.Open();
                 string Login = "Select Count(1) from Micro Where username=@username And password=@password";
                 SqlCommand sqlcmd = new SqlCommand(Login, sqlCon);
                 sqlcmd.Parameters.AddWithValue("@username", TextBox1.Text.Trim());
                 sqlcmd.Parameters.AddWithValue("@password", TextBox2.Text.Trim());
-              //sqlcmd.Parameters.AddWithValue("@Firtname", Firstname.Text.Trim());
-               // sqlcmd.Parameters.AddWithValue("@Surname", Surname.Text.Trim());
-              // sqlcmd.Parameters.AddWithValue("@Age", Age.Text.Trim());
-               // sqlcmd.Parameters.AddWithValue("@EmailAddress", EmailAddress.Text.Trim());
                 int count = Convert.ToInt32(sqlcmd.ExecuteScalar());
-            
-            if(count == 1)
+
+                if (count == 1)
                 {
-                    //Session["username"] = TextBox1.Text.Trim();
                     Response.Redirect("NewPage.aspx");
-                    //MessageBox.Show("You have sign up :D");
                 }
 
-            else {
+                else
+                {
                     MessageBox.Show("Password Don't match!");
                 }
             }
