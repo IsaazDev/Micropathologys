@@ -19,7 +19,7 @@ namespace Micropathologys
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated Security=True;"))
+            using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated  Security=True;"))
             {
                 sqlCon.Open();
                 string Login = "Select Count(1) from Micro Where username=@username And password=@password";
