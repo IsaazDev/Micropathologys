@@ -1,1 +1,1 @@
-﻿ select * from Micro
+﻿  select * from Micro

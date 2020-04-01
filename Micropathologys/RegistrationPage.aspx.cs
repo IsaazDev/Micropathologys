@@ -23,7 +23,7 @@ namespace Micropathologys
         {
             using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated Security=True;"))
             {
-                sqlCon.Open();
+                 sqlCon.Open();
                 string Login = "INSERT INTO Micro(username, password ,Firstname, Surname, Age, EmailAddress) VALUES ('"+Textbox3.Text+"' , '"+TextBox5.Text+"' ,'"+FirstName.Text+"' , '"+Surname.Text+"' , '"+Age.Text+"' ,'"+EmailAddress.Text+"' )";
                 SqlCommand sqlcmd = new SqlCommand(Login, sqlCon);
 

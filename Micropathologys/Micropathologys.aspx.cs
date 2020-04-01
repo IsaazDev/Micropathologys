@@ -21,7 +21,7 @@ namespace Micropathologys
         {
             using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated  Security=True;"))
             {
-                sqlCon.Open();
+                 sqlCon.Open();
                 string Login = "Select Count(1) from Micro Where username=@username And password=@password";
                 SqlCommand sqlcmd = new SqlCommand(Login, sqlCon);
                 sqlcmd.Parameters.AddWithValue("@username", TextBox1.Text.Trim());
