@@ -7,14 +7,33 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Net;
+using System.Net.Mail;
+using System.Configuration;
+using System.IO;
+using System.Web.Mail;
 
 namespace Micropathologys
 {
     public partial class RegistrationPage : System.Web.UI.Page
     {
+        private System.Net.Mail.MailMessage obj;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            //lblErrorMessage.Visible = false;
+            string Email = TextBox5.Text;
+            SmtpClient servers = new SmtpClient();
+            servers.Timeout = 150;
+            servers.Credentials = new NetworkCredential(ConfigurationManager.AppSettings["EmailAddress"].ToString(), ConfigurationManager.AppSettings[""].ToString());
+            servers.Port = System.Convert.ToInt32(ConfigurationManager.AppSettings["Port"].ToString()); ;
+            servers.Host = ConfigurationManager.AppSettings["Hostname"].ToString();
+            servers.EnableSsl = false;
+            obj = new System.Net.Mail.MailMessage();
+            obj.From = new MailAddress(TextBox5.Text, "Email confirmation", System.Text.Encoding.UTF8);
+            obj.To.Add(ConfigurationManager.AppSettings["EmailAddress"]);
+            obj.Priority = System.Net.Mail.MailPriority.High;
+            obj.Subject = TextBox5.Text;
+            obj.Body = "  EmailAddress: " + TextBox5;
         }
 
 

@@ -19,6 +19,9 @@ namespace Micropathologys
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+
+
             using (SqlConnection sqlCon = new SqlConnection("Server= localhost; Database= Dele_default; Integrated Security=True;"))
             {
                 sqlCon.Open();
